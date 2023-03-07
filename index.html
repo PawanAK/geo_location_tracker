@@ -1,39 +1,52 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IP tracker</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles.css" />
+  <title>Frontend Mentor | IP Address Tracker</title>
 </head>
+
 <body>
-        <div class="body-background">
-            <header class="top-heading">
-            <h1 class="heading">IP Address tracker</h1>
-            </header>
-            <form id="form" class="input-box">
-            <input type="text" placeholder="Search for an IP Address">
-            <button type="submit">click here</button>
-            </form>
-            <div class="info-box">
-            <div>
-                <h3>IP Address</h3>
-                <p id="ip-address">192.212.174.101</p>
-            </div>
-            <div>
-                <h3>Location</h3>
-                <p id="location">Brooklyn, NY 10001</p>
-            </div>
-            <div>
-                <h3>Timezone</h3>
-                <p id="timezone">UTC -05:00</p>
-            </div>
-            <div>
-                <h3>ISP</h3>
-                <p id="isp">SpaceX Starlink</p>
-            </div>
-            </div>
-            <div id="map" class="map-container"></div>    
-        </div>
+  <img class="banner" src="./images/pattern-bg.png" alt="background" />
+  <main>
+    <h1 class="title">IP Address Tracker</h1>
+    <form class="search-bar" id="search_form">
+      <label for="search">
+        <input type="text" id="search" name="search" placeholder="Search for IP address or domain (ex: google.com)" />
+      </label>
+      <button type="submit" id="submit_search">
+        <img src="./images/icon-arrow.svg" alt="icon arrow" />
+      </button>
+    </form>
+    <div class="information-grid">
+      <div class="box">
+        <small class="box-title">IP Address</small>
+        <h2 class="box-content" id="ipAddress">1.1.1</h2>
+      </div>
+      <div class="box">
+        <small class="box-title">Location</small>
+        <h2 class="box-content" id="location">county</h2>
+      </div>
+      <div class="box">
+        <small class="box-title">Timezone</small>
+        <h2 class="box-content" id="timezone">9.0</h2>
+      </div>
+      <div class="box">
+        <small class="box-title">ISP</small>
+        <h2 class="box-content" id="isp">jio</h2>
+      </div>
+    </div>
+  </main>
+
+  <div id="map" class="map"></div>
+  <div class="loading hide">
+    <div class="dot-elastic"></div>
+  </div>
+
+  <script src="./script.js"></script>
 </body>
+
 </html>
