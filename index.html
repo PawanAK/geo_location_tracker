@@ -1,52 +1,51 @@
-
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./styles.css" />
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css" type="text/css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
   <title>Frontend Mentor | IP Address Tracker</title>
 </head>
-
 <body>
-  <img class="banner" src="./images/pattern-bg.png" alt="background" />
-  <main>
-    <h1 class="title">IP Address Tracker</h1>
-    <form class="search-bar" id="search_form">
-      <label for="search">
-        <input type="text" id="search" name="search" placeholder="Search for IP address or domain (ex: google.com)" />
-      </label>
-      <button type="submit" id="submit_search">
-        <img src="./images/icon-arrow.svg" alt="icon arrow" />
-      </button>
-    </form>
-    <div class="information-grid">
-      <div class="box">
-        <small class="box-title">IP Address</small>
-        <h2 class="box-content" id="ipAddress">1.1.1</h2>
+  <header>
+    <div class="title">
+      <h1 class="title_Heading">IP Address Tracker</h1>
+    </div>
+    <div class="bar">
+      <input class="bar_Search" type="text" placeholder="Search for any IP address or domain">
+      <button class="bar_Search_Button"><b>></b></button>
+    </div>
+    <div class="info">
+      <div class="info_Ip">
+        <h2>IP ADDRESS</h1>
+        <h3 class="info_Ip_val">-</h2>
       </div>
-      <div class="box">
-        <small class="box-title">Location</small>
-        <h2 class="box-content" id="location">county</h2>
+      <div class="info_Country">
+        <h2>COUNTRY (capital)</h1>
+        <h3 class="info_Country_val">-</h2>
       </div>
-      <div class="box">
-        <small class="box-title">Timezone</small>
-        <h2 class="box-content" id="timezone">9.0</h2>
+      <div class="info_State">
+        <h2>STATE</h1>
+        <h3 class="info_State_val">-</h2>
       </div>
-      <div class="box">
-        <small class="box-title">ISP</small>
-        <h2 class="box-content" id="isp">jio</h2>
+      <div class="info_City">
+        <h2>CITY</h1>
+        <h3 class="info_City_val">-</h2>
       </div>
     </div>
+  </header>
+  <main>
+    <div id="map"></div>
   </main>
-
-  <div id="map" class="map"></div>
-  <div class="loading hide">
-    <div class="dot-elastic"></div>
-  </div>
-
-  <script src="./script.js"></script>
+  <script src="/script.js"></script>
 </body>
-
 </html>
