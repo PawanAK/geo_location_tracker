@@ -22,15 +22,37 @@ where(Ipp);
 const mmap= function(lat,lng)
 {
     const coords=[lat,lng]
-    const map = L.map("map").setView(coords, 13);
 
-    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    const mymap = L.map("map").setView(coords, 13);
+    const marker = L.marker(coords).addTo(mymap);
+
+    L.tileLayer(
+      "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw",
+      {
+        maxZoom: 18,
         attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(map);
-
-    L.marker(coords)
-    .addTo(map)
-    .bindPopup("A pretty CSS3 popup.<br> Easily customizable.")
-    .openPopup();
+          'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+          'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        id: "mapbox/streets-v11",
+        tileSize: 512,
+        zoomOffset: -1,
+      }
+    ).addTo(mymap);
 }
+
+// const mymap = L.map("map").setView(coords, 13);
+// const marker = L.marker(coords).addTo(mymap);
+
+// L.tileLayer(
+//   "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw",
+//   {
+//     maxZoom: 18,
+//     attribution:
+//       'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+//       'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+//     id: "mapbox/streets-v11",
+//     tileSize: 512,
+//     zoomOffset: -1,
+//   }
+// ).addTo(mymap);
+
