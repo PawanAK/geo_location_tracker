@@ -21,14 +21,15 @@ where(Ipp);
 
 const mmap= function(lat,lng)
 {
-    var map = L.map("map").setView([lat, lng], 13);
+    const coords=[lat,lng]
+    const map = L.map("map").setView(coords, 13);
 
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
 
-    L.marker([lat,lng])
+    L.marker(coords)
     .addTo(map)
     .bindPopup("A pretty CSS3 popup.<br> Easily customizable.")
     .openPopup();
